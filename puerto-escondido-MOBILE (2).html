@@ -1,0 +1,2258 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Puerto Escondido 🌊">
+<meta name="theme-color" content="#0D1F2D">
+<title>Puerto Escondido 🌊 Mayo 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --sand: #F5ECD7;
+    --ocean: #1A4A5C;
+    --coral: #E8643A;
+    --teal: #2E8B7A;
+    --gold: #D4A843;
+    --night: #0D1F2D;
+    --foam: #EDF5F3;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background-color: var(--night);
+    color: var(--sand);
+    font-family: 'DM Sans', sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* HERO */
+  .hero {
+    position: relative;
+    height: 100vh;
+    min-height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 0 0 60px 60px;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background: 
+      radial-gradient(ellipse at 20% 80%, rgba(46,139,122,0.35) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 20%, rgba(232,100,58,0.25) 0%, transparent 50%),
+      radial-gradient(ellipse at 50% 50%, rgba(26,74,92,0.8) 0%, transparent 80%),
+      linear-gradient(180deg, #0D1F2D 0%, #1A4A5C 50%, #0D1F2D 100%);
+  }
+
+  .wave-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 200px;
+    overflow: hidden;
+  }
+
+  .wave {
+    position: absolute;
+    bottom: 0;
+    width: 200%;
+    height: 100%;
+  }
+
+  .wave svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .wave-1 { animation: wave 8s linear infinite; opacity: 0.4; }
+  .wave-2 { animation: wave 12s linear infinite reverse; opacity: 0.25; bottom: 10px; }
+  .wave-3 { animation: wave 6s linear infinite; opacity: 0.15; bottom: 20px; }
+
+  @keyframes wave {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  .stars {
+    position: absolute;
+    inset: 0;
+    background-image: 
+      radial-gradient(1px 1px at 20% 15%, rgba(255,255,255,0.8) 0%, transparent 100%),
+      radial-gradient(1px 1px at 60% 25%, rgba(255,255,255,0.6) 0%, transparent 100%),
+      radial-gradient(1.5px 1.5px at 80% 10%, rgba(255,255,255,0.9) 0%, transparent 100%),
+      radial-gradient(1px 1px at 35% 40%, rgba(255,255,255,0.5) 0%, transparent 100%),
+      radial-gradient(1px 1px at 90% 35%, rgba(255,255,255,0.7) 0%, transparent 100%),
+      radial-gradient(1px 1px at 10% 60%, rgba(255,255,255,0.4) 0%, transparent 100%),
+      radial-gradient(1.5px 1.5px at 45% 8%, rgba(255,255,255,0.9) 0%, transparent 100%),
+      radial-gradient(1px 1px at 70% 55%, rgba(255,255,255,0.3) 0%, transparent 100%);
+  }
+
+  .hero-eyebrow {
+    position: relative;
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 12px;
+    animation: fadeUp 1s ease both;
+  }
+
+  .hero-title {
+    position: relative;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(52px, 10vw, 110px);
+    font-weight: 900;
+    line-height: 0.9;
+    margin-bottom: 24px;
+    animation: fadeUp 1s 0.2s ease both;
+  }
+
+  .hero-title span { color: var(--coral); }
+
+  .hero-meta {
+    position: relative;
+    display: flex;
+    gap: 32px;
+    align-items: center;
+    animation: fadeUp 1s 0.4s ease both;
+  }
+
+  .hero-badge {
+    background: rgba(46,139,122,0.2);
+    border: 1px solid rgba(46,139,122,0.4);
+    border-radius: 100px;
+    padding: 8px 20px;
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 1px;
+    backdrop-filter: blur(10px);
+  }
+
+  .hero-badge.coral {
+    background: rgba(232,100,58,0.2);
+    border-color: rgba(232,100,58,0.4);
+    color: var(--coral);
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* NAV */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(13,31,45,0.92);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(46,139,122,0.2);
+    display: flex;
+    gap: 4px;
+    padding: 0 24px;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  nav::-webkit-scrollbar { display: none; }
+
+  .nav-btn {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: rgba(245,236,215,0.5);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 16px 20px;
+    white-space: nowrap;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    min-height: 44px;
+  }
+
+  .nav-btn:hover { color: var(--sand); }
+  .nav-btn.active { color: var(--coral); border-bottom-color: var(--coral); }
+
+  /* MAIN */
+  main { max-width: 1200px; margin: 0 auto; padding: 60px 24px; }
+
+  .section { display: none; }
+  .section.active { display: block; animation: fadeIn 0.4s ease; }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 14px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 8px;
+  }
+
+  .section-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 5vw, 52px);
+    font-weight: 700;
+    margin-bottom: 48px;
+    line-height: 1.1;
+  }
+
+  .section-heading em { color: var(--coral); font-style: normal; }
+
+  /* ITINERARY */
+  .days-grid { display: flex; flex-direction: column; gap: 4px; }
+
+  .day-card {
+    border: 1px solid rgba(46,139,122,0.2);
+    border-radius: 16px;
+    overflow: hidden;
+    background: rgba(26,74,92,0.15);
+    transition: border-color 0.3s;
+  }
+
+  .day-card:hover { border-color: rgba(46,139,122,0.5); }
+
+  .day-header {
+    display: grid;
+    grid-template-columns: 80px 1fr auto;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 28px;
+    cursor: pointer;
+    user-select: none;
+    -webkit-tap-highlight-color: rgba(46,139,122,0.15);
+    touch-action: manipulation;
+  }
+
+  .day-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    font-weight: 900;
+    color: rgba(245,236,215,0.15);
+    line-height: 1;
+  }
+
+  .day-info { }
+
+  .day-date {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 4px;
+  }
+
+  .day-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+  }
+
+  .day-mood {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  .mood-tag {
+    font-size: 11px;
+    padding: 4px 12px;
+    border-radius: 100px;
+    font-family: 'Space Mono', monospace;
+    letter-spacing: 0.5px;
+  }
+
+  .mood-tag.beach { background: rgba(46,139,122,0.25); color: var(--teal); border: 1px solid rgba(46,139,122,0.3); }
+  .mood-tag.drinks { background: rgba(212,168,67,0.2); color: var(--gold); border: 1px solid rgba(212,168,67,0.3); }
+  .mood-tag.party { background: rgba(232,100,58,0.2); color: var(--coral); border: 1px solid rgba(232,100,58,0.3); }
+  .mood-tag.chill { background: rgba(26,74,92,0.4); color: rgba(245,236,215,0.7); border: 1px solid rgba(245,236,215,0.15); }
+  .mood-tag.travel { background: rgba(245,236,215,0.1); color: rgba(245,236,215,0.6); border: 1px solid rgba(245,236,215,0.15); }
+
+  .day-body {
+    display: none;
+    padding: 0 28px 28px 28px;
+    border-top: 1px solid rgba(46,139,122,0.15);
+  }
+
+  .day-body.open { display: block; }
+
+  .timeline {
+    position: relative;
+    padding-left: 28px;
+    margin-top: 24px;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: 8px;
+    bottom: 8px;
+    width: 1px;
+    background: linear-gradient(180deg, var(--teal), transparent);
+  }
+
+  .timeline-item {
+    position: relative;
+    margin-bottom: 20px;
+  }
+
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -24px;
+    top: 8px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--teal);
+    box-shadow: 0 0 8px rgba(46,139,122,0.6);
+  }
+
+  .timeline-time {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: var(--teal);
+    margin-bottom: 3px;
+  }
+
+  .timeline-text {
+    font-size: 15px;
+    line-height: 1.6;
+    color: rgba(245,236,215,0.85);
+  }
+
+  .timeline-text strong { color: var(--sand); }
+
+  /* SPOTS */
+  .spots-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 20px;
+  }
+
+  .spot-card {
+    background: rgba(26,74,92,0.2);
+    border: 1px solid rgba(46,139,122,0.2);
+    border-radius: 20px;
+    padding: 24px;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .spot-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+  }
+
+  .spot-card.beach-club::before { background: linear-gradient(90deg, var(--teal), var(--ocean)); }
+  .spot-card.bar::before { background: linear-gradient(90deg, var(--gold), var(--coral)); }
+  .spot-card.antro::before { background: linear-gradient(90deg, var(--coral), #9B59B6); }
+
+  .spot-card:hover { 
+    transform: translateY(-4px); 
+    border-color: rgba(46,139,122,0.5);
+    background: rgba(26,74,92,0.35);
+  }
+
+  .spot-type {
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  .spot-type.beach-club { color: var(--teal); }
+  .spot-type.bar { color: var(--gold); }
+  .spot-type.antro { color: var(--coral); }
+
+  .spot-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  .spot-rating {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 12px;
+  }
+
+  .stars-visual {
+    display: flex;
+    gap: 2px;
+  }
+
+  .star { color: var(--gold); font-size: 12px; }
+  .star.empty { color: rgba(245,236,215,0.2); }
+
+  .rating-num {
+    font-family: 'Space Mono', monospace;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--gold);
+  }
+
+  .rating-count {
+    font-size: 12px;
+    color: rgba(245,236,215,0.4);
+  }
+
+  .spot-desc {
+    font-size: 14px;
+    line-height: 1.6;
+    color: rgba(245,236,215,0.65);
+    margin-bottom: 16px;
+  }
+
+  .spot-tags {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+  }
+
+  .spot-tag {
+    font-size: 11px;
+    padding: 3px 10px;
+    border-radius: 100px;
+    background: rgba(245,236,215,0.08);
+    color: rgba(245,236,215,0.5);
+    border: 1px solid rgba(245,236,215,0.1);
+  }
+
+  .spot-hours {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    color: rgba(245,236,215,0.4);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .spot-hours span { color: rgba(46,139,122,0.8); }
+
+  /* TIPS */
+  .tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
+  }
+
+  .tip-card {
+    background: rgba(26,74,92,0.2);
+    border: 1px solid rgba(46,139,122,0.15);
+    border-radius: 16px;
+    padding: 24px;
+  }
+
+  .tip-icon {
+    font-size: 28px;
+    margin-bottom: 12px;
+  }
+
+  .tip-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+
+  .tip-text {
+    font-size: 14px;
+    line-height: 1.7;
+    color: rgba(245,236,215,0.65);
+  }
+
+  /* CHECKLIST */
+  .checklist-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 32px;
+  }
+
+  .checklist-group h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(46,139,122,0.2);
+  }
+
+  .check-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(245,236,215,0.05);
+    cursor: pointer;
+    transition: opacity 0.2s;
+    -webkit-tap-highlight-color: rgba(46,139,122,0.1);
+    touch-action: manipulation;
+    min-height: 44px;
+  }
+
+  .check-item input[type="checkbox"] {
+    width: 22px;
+    height: 22px;
+    border-radius: 4px;
+    border: 1px solid rgba(46,139,122,0.4);
+    background: transparent;
+    cursor: pointer;
+    accent-color: var(--teal);
+    flex-shrink: 0;
+  }
+
+  .check-label {
+    font-size: 14px;
+    color: rgba(245,236,215,0.8);
+    line-height: 1.4;
+  }
+
+  .check-item.done .check-label {
+    text-decoration: line-through;
+    opacity: 0.4;
+  }
+
+  /* SUMMARY CARDS */
+  .summary-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 16px;
+    margin-bottom: 48px;
+  }
+
+  .summary-card {
+    background: rgba(26,74,92,0.25);
+    border: 1px solid rgba(46,139,122,0.2);
+    border-radius: 16px;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .summary-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    font-weight: 900;
+    color: var(--coral);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .summary-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(245,236,215,0.5);
+  }
+
+  /* DIVIDER */
+  .divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(46,139,122,0.3), transparent);
+    margin: 48px 0;
+  }
+
+  .category-label {
+    font-family: 'Playfair Display', serif;
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 20px;
+    margin-top: 36px;
+  }
+
+  .warning-box {
+    background: rgba(232,100,58,0.1);
+    border: 1px solid rgba(232,100,58,0.3);
+    border-radius: 12px;
+    padding: 16px 20px;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    margin-bottom: 24px;
+  }
+
+  .warning-box .w-icon { font-size: 18px; flex-shrink: 0; }
+
+  .warning-box .w-text {
+    font-size: 13px;
+    line-height: 1.6;
+    color: rgba(245,236,215,0.75);
+  }
+
+  .warning-box .w-text strong { color: var(--coral); }
+
+  /* ── IPHONE / MOBILE ── */
+  @media (max-width: 600px) {
+    body { padding-bottom: env(safe-area-inset-bottom); }
+
+    .hero {
+      height: 100svh; min-height: 520px;
+      padding: 0 0 calc(env(safe-area-inset-bottom) + 48px) 24px;
+      justify-content: flex-end;
+    }
+    .hero-eyebrow { font-size: 9px; letter-spacing: 2px; }
+    .hero-title { font-size: clamp(44px, 15vw, 72px); margin-bottom: 20px; }
+    .hero-meta { gap: 8px; flex-wrap: wrap; }
+    .hero-badge { font-size: 10px; padding: 6px 14px; }
+
+    /* Nav moves to bottom like a real app */
+    nav {
+      position: fixed;
+      bottom: 0; left: 0; right: 0; top: auto;
+      z-index: 100;
+      background: rgba(13,31,45,0.97);
+      backdrop-filter: blur(24px);
+      border-top: 1px solid rgba(46,139,122,0.25);
+      border-bottom: none;
+      padding: 0 4px env(safe-area-inset-bottom, 8px);
+      display: flex;
+      justify-content: space-around;
+      gap: 0;
+    }
+    .nav-btn {
+      flex: 1; min-width: 0;
+      padding: 12px 4px 10px;
+      font-size: 9px; letter-spacing: 0;
+      border-bottom: none;
+      border-top: 2px solid transparent;
+      text-align: center;
+      white-space: normal; line-height: 1.3;
+    }
+    .nav-btn.active { border-top-color: var(--coral); border-bottom-color: transparent; color: var(--coral); }
+
+    main { padding: 24px 16px calc(env(safe-area-inset-bottom) + 80px); }
+
+    .section-heading { font-size: clamp(26px, 8vw, 36px); margin-bottom: 24px; }
+
+    .summary-row {
+      display: flex; overflow-x: auto; gap: 10px;
+      scrollbar-width: none; margin-bottom: 24px; padding-bottom: 4px;
+    }
+    .summary-row::-webkit-scrollbar { display: none; }
+    .summary-card { min-width: 108px; flex-shrink: 0; padding: 14px 10px; }
+    .summary-num { font-size: 32px; }
+
+    .day-header { grid-template-columns: 42px 1fr auto; gap: 8px; padding: 14px 14px; }
+    .day-num { font-size: 30px; }
+    .day-title { font-size: 17px; }
+    .day-date { font-size: 9px; }
+    .day-mood { display: none; }
+    .day-body { padding: 0 18px 20px; }
+
+    .timeline { padding-left: 22px; margin-top: 16px; }
+    .timeline-item { margin-bottom: 16px; }
+    .timeline-time { font-size: 9px; letter-spacing: 1.5px; }
+    .timeline-text { font-size: 14px; line-height: 1.6; }
+
+    .spots-grid { grid-template-columns: 1fr; gap: 14px; }
+    .spot-card { padding: 20px; }
+    .spot-name { font-size: 20px; }
+
+    .checklist-grid { grid-template-columns: 1fr; gap: 24px; }
+
+    .edit-mode-bar { padding: 10px 16px; gap: 8px; }
+    .edit-mode-label { font-size: 9px; }
+
+    .fab {
+      bottom: calc(env(safe-area-inset-bottom) + 74px);
+      right: 16px; width: 50px; height: 50px; font-size: 22px;
+    }
+    .fab-label { display: none; }
+
+    .modal-overlay { align-items: flex-end; padding: 0; }
+    .modal {
+      border-radius: 24px 24px 0 0; max-width: 100%;
+      padding: 28px 20px calc(env(safe-area-inset-bottom) + 20px);
+      max-height: 90svh; overflow-y: auto;
+    }
+    .form-row { grid-template-columns: 1fr; gap: 0; }
+    .warning-box { flex-direction: column; gap: 8px; }
+  }
+
+  /* NOTION FAB */
+  .notion-fab {
+    position: fixed;
+    bottom: 32px;
+    left: 32px;
+    width: auto;
+    height: 50px;
+    border-radius: 100px;
+    background: linear-gradient(135deg, #2E8B7A, #1A4A5C);
+    color: white;
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    border: 1px solid rgba(46,139,122,0.5);
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(46,139,122,0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 0 20px;
+    z-index: 200;
+    transition: transform 0.2s, box-shadow 0.2s;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    text-decoration: none;
+  }
+  .notion-fab:hover { transform: scale(1.05); box-shadow: 0 6px 28px rgba(46,139,122,0.6); }
+  .notion-fab-icon { font-size: 18px; }
+
+  @media (max-width: 600px) {
+    .notion-fab {
+      bottom: calc(env(safe-area-inset-bottom) + 74px);
+      left: 16px;
+      font-size: 10px;
+      height: 44px;
+      padding: 0 14px;
+      gap: 6px;
+    }
+  }
+
+  /* FAB */
+  .fab {
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--coral), #c0392b);
+    color: white;
+    font-size: 26px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(232,100,58,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 200;
+    transition: transform 0.2s, box-shadow 0.2s;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+  .fab:hover { transform: scale(1.1); box-shadow: 0 6px 28px rgba(232,100,58,0.7); }
+  .fab-label {
+    position: fixed;
+    bottom: 38px;
+    right: 96px;
+    background: rgba(13,31,45,0.95);
+    border: 1px solid rgba(232,100,58,0.3);
+    color: rgba(245,236,215,0.85);
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 1px;
+    padding: 7px 14px;
+    border-radius: 20px;
+    white-space: nowrap;
+    z-index: 200;
+    backdrop-filter: blur(10px);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(6px);
+    transition: opacity 0.2s, transform 0.2s;
+  }
+  .fab:hover + .fab-label, .fab-label:hover {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  /* MODAL OVERLAY */
+  .modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(13,31,45,0.85);
+    backdrop-filter: blur(8px);
+    z-index: 300;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  .modal-overlay.open { display: flex; animation: fadeIn 0.25s ease; }
+
+  .modal {
+    background: linear-gradient(160deg, #0D2033 0%, #102840 100%);
+    border: 1px solid rgba(46,139,122,0.3);
+    border-radius: 24px;
+    padding: 36px;
+    width: 100%;
+    max-width: 520px;
+    position: relative;
+    box-shadow: 0 24px 80px rgba(0,0,0,0.6);
+  }
+
+  .modal-close {
+    position: absolute;
+    top: 18px;
+    right: 20px;
+    background: rgba(245,236,215,0.07);
+    border: none;
+    color: rgba(245,236,215,0.5);
+    font-size: 20px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+  .modal-close:hover { background: rgba(245,236,215,0.12); color: var(--sand); }
+
+  .modal-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .modal-title em { color: var(--coral); font-style: normal; }
+  .modal-sub { font-size: 13px; color: rgba(245,236,215,0.45); margin-bottom: 28px; }
+
+  .form-group { margin-bottom: 18px; }
+  .form-label {
+    display: block;
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 7px;
+  }
+  .form-input, .form-select, .form-textarea {
+    width: 100%;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(46,139,122,0.25);
+    border-radius: 10px;
+    color: var(--sand);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px; /* 16px prevents iOS auto-zoom */
+    padding: 11px 14px;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .form-input:focus, .form-select:focus, .form-textarea:focus {
+    border-color: rgba(46,139,122,0.6);
+  }
+  .form-select option { background: #0D2033; }
+  .form-textarea { resize: vertical; min-height: 80px; }
+
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+
+  .tags-input-row {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 6px;
+  }
+  .tag-chip {
+    background: rgba(245,236,215,0.08);
+    border: 1px solid rgba(245,236,215,0.12);
+    color: rgba(245,236,215,0.6);
+    font-size: 13px;
+    padding: 8px 14px;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: all 0.15s;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    min-height: 36px;
+    display: inline-flex;
+    align-items: center;
+  }
+  .tag-chip.active {
+    background: rgba(46,139,122,0.25);
+    border-color: rgba(46,139,122,0.5);
+    color: var(--teal);
+  }
+
+  .modal-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 28px;
+  }
+  .btn-cancel {
+    flex: 1;
+    padding: 14px;
+    border-radius: 10px;
+    background: rgba(245,236,215,0.06);
+    border: 1px solid rgba(245,236,215,0.1);
+    color: rgba(245,236,215,0.5);
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.2s;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    min-height: 44px;
+  }
+  .btn-cancel:hover { background: rgba(245,236,215,0.1); }
+  .btn-save {
+    flex: 2;
+    padding: 14px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, var(--coral), #c0392b);
+    border: none;
+    color: white;
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: opacity 0.2s, transform 0.2s;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    min-height: 44px;
+  }
+  .btn-save:hover { opacity: 0.9; transform: translateY(-1px); }
+
+  /* Custom spots in grid */
+  .spot-card.custom-entry { border-color: rgba(212,168,67,0.3); }
+  .spot-card.custom-entry::before { background: linear-gradient(90deg, var(--gold), var(--teal)); }
+  .custom-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 10px;
+    font-family: 'Space Mono', monospace;
+    letter-spacing: 1px;
+    color: var(--gold);
+    background: rgba(212,168,67,0.1);
+    border: 1px solid rgba(212,168,67,0.2);
+    padding: 3px 8px;
+    border-radius: 100px;
+    margin-bottom: 10px;
+  }
+  .remove-spot {
+    margin-top: 12px;
+    background: rgba(232,100,58,0.1);
+    border: 1px solid rgba(232,100,58,0.2);
+    color: rgba(232,100,58,0.6);
+    font-size: 11px;
+    font-family: 'Space Mono', monospace;
+    padding: 5px 12px;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: all 0.2s;
+    letter-spacing: 0.5px;
+  }
+  .remove-spot:hover { background: rgba(232,100,58,0.2); color: var(--coral); }
+
+  .custom-section-title {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin: 36px 0 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .custom-section-title::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: rgba(212,168,67,0.2);
+  }
+  /* ── INLINE EDITING ── */
+  .edit-mode-bar {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 150;
+    background: rgba(46,139,122,0.15);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(46,139,122,0.4);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 24px;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
+  }
+  .edit-mode-bar.visible { transform: translateY(0); }
+  .edit-mode-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--teal);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .edit-mode-label::before {
+    content: '';
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--teal);
+    box-shadow: 0 0 8px rgba(46,139,122,0.8);
+    animation: pulse 1.5s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+  .edit-done-btn {
+    background: var(--teal);
+    color: var(--night);
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 100px;
+    cursor: pointer;
+    font-weight: 700;
+    transition: opacity 0.2s;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    min-height: 44px;
+  }
+  .edit-done-btn:hover { opacity: 0.85; }
+
+  /* Edit toggle button on day headers */
+  .edit-day-btn {
+    opacity: 0;
+    background: rgba(46,139,122,0.15);
+    border: 1px solid rgba(46,139,122,0.3);
+    color: rgba(46,139,122,0.8);
+    font-size: 13px;
+    width: 30px; height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    flex-shrink: 0;
+    margin-left: 8px;
+  }
+  .day-card:hover .edit-day-btn { opacity: 1; }
+  .edit-day-btn:hover { background: rgba(46,139,122,0.3); color: var(--teal); }
+  /* Always show edit button on touch devices */
+  @media (hover: none) {
+    .edit-day-btn {
+      opacity: 1;
+      width: 38px;
+      height: 38px;
+      font-size: 16px;
+      background: rgba(46,139,122,0.25);
+      border-color: rgba(46,139,122,0.6);
+    }
+  }
+
+  /* Editable fields */
+  [contenteditable="true"] {
+    outline: none;
+    border-radius: 6px;
+    transition: background 0.2s, box-shadow 0.2s;
+    cursor: text;
+  }
+  [contenteditable="true"]:hover {
+    background: rgba(46,139,122,0.08);
+  }
+  [contenteditable="true"]:focus {
+    background: rgba(46,139,122,0.13);
+    box-shadow: 0 0 0 2px rgba(46,139,122,0.35);
+    padding: 2px 6px;
+  }
+
+  /* Add / remove activity buttons */
+  .add-activity-btn {
+    display: none;
+    align-items: center;
+    gap: 8px;
+    margin-top: 16px;
+    background: rgba(46,139,122,0.1);
+    border: 1px dashed rgba(46,139,122,0.35);
+    color: rgba(46,139,122,0.7);
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 10px 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 100%;
+    transition: all 0.2s;
+  }
+  .add-activity-btn:hover {
+    background: rgba(46,139,122,0.18);
+    border-color: rgba(46,139,122,0.6);
+    color: var(--teal);
+  }
+  .editing-mode .add-activity-btn { display: flex; }
+
+  .remove-activity-btn {
+    display: none;
+    position: absolute;
+    right: -8px;
+    top: 4px;
+    background: rgba(232,100,58,0.15);
+    border: 1px solid rgba(232,100,58,0.3);
+    color: rgba(232,100,58,0.7);
+    font-size: 12px;
+    width: 22px; height: 22px;
+    border-radius: 50%;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    padding: 0;
+    line-height: 1;
+  }
+  .remove-activity-btn:hover { background: rgba(232,100,58,0.3); color: var(--coral); }
+  .editing-mode .timeline-item .remove-activity-btn { display: flex; }
+  .timeline-item { position: relative; }
+
+  /* Title edit hint */
+  .day-title[contenteditable="true"]::after,
+  .timeline-time[contenteditable="true"]::after,
+  .timeline-text[contenteditable="true"]::after {
+    content: ' ✎';
+    font-size: 0.7em;
+    opacity: 0.3;
+  }
+
+  /* Saved flash */
+  @keyframes savedFlash {
+    0% { background: rgba(46,139,122,0.35); }
+    100% { background: transparent; }
+  }
+  .just-saved { animation: savedFlash 1s ease forwards; }
+
+  /* Mobile edit hint banner */
+  .mobile-hint {
+    display: none;
+    position: fixed;
+    bottom: calc(env(safe-area-inset-bottom) + 80px);
+    left: 16px;
+    right: 72px;
+    background: rgba(46,139,122,0.18);
+    border: 1px solid rgba(46,139,122,0.4);
+    border-radius: 14px;
+    padding: 12px 16px;
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+    color: var(--teal);
+    z-index: 190;
+    backdrop-filter: blur(12px);
+    line-height: 1.6;
+    transition: opacity 0.5s ease;
+  }
+  .mobile-hint.hidden { opacity: 0; pointer-events: none; }
+  @media (hover: none) {
+    .mobile-hint { display: block; }
+  }
+</style>
+</head>
+<body>
+
+
+<!-- NOTION FAB -->
+<a class="notion-fab" href="https://www.notion.so/Puerto-Escondido-1d351e47869680e6a936f65998b1c768" target="_blank" rel="noopener">
+  <span class="notion-fab-icon">✏️</span>
+  <span>Editar en Notion</span>
+</a>
+
+<!-- EDIT MODE BAR -->
+<div class="edit-mode-bar" id="editModeBar">
+  <span class="edit-mode-label">Modo edición — toca el texto para editar</span>
+  <button class="edit-done-btn" >✓ Listo</button>
+</div>
+
+<!-- MOBILE HINT (only visible on touch devices) -->
+<div class="mobile-hint" id="mobileHint">
+  ✏ Toca el botón <strong style="color:var(--teal)">✏</strong> en cada día para editar,<br>o mantén presionado el día 0.5 seg
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-bg"></div>
+  <div class="stars"></div>
+  <div class="wave-container">
+    <div class="wave wave-1">
+      <svg viewBox="0 0 1440 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,60 C240,100 480,20 720,60 C960,100 1200,20 1440,60 L1440,120 L0,120 Z" fill="rgba(46,139,122,0.3)"/>
+      </svg>
+    </div>
+    <div class="wave wave-2">
+      <svg viewBox="0 0 1440 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,40 C200,80 400,10 720,50 C900,75 1200,30 1440,50 L1440,120 L0,120 Z" fill="rgba(26,74,92,0.5)"/>
+      </svg>
+    </div>
+    <div class="wave wave-3">
+      <svg viewBox="0 0 1440 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,80 C300,30 600,90 900,50 C1100,25 1300,70 1440,55 L1440,120 L0,120 Z" fill="rgba(13,31,45,0.8)"/>
+      </svg>
+    </div>
+  </div>
+  <p class="hero-eyebrow">✦ Viaje Grupal ✦ 6 Parejas ✦ Oaxaca</p>
+  <h1 class="hero-title">Puerto<br><span>Escondido</span></h1>
+  <div class="hero-meta">
+    <div class="hero-badge">📅 13 — 18 Mayo 2026</div>
+    <div class="hero-badge coral">👥 12 personas</div>
+    <div class="hero-badge">🌊 5 noches</div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <button class="nav-btn active" data-section="itinerario">Itinerario</button>
+  <button class="nav-btn" data-section="spots">Beach Clubs & Bares</button>
+  <button class="nav-btn" data-section="antro">Antro & Noche</button>
+  <button class="nav-btn" data-section="checklist">Checklist</button>
+</nav>
+
+<!-- MAIN CONTENT -->
+<main>
+
+  <!-- ITINERARIO -->
+  <section id="itinerario" class="section active">
+    <p class="section-title">✦ Plan completo</p>
+    <h2 class="section-heading">El <em>Itinerario</em></h2>
+
+    <div class="summary-row">
+      <div class="summary-card"><div class="summary-num">5</div><div class="summary-label">Noches</div></div>
+      <div class="summary-card"><div class="summary-num">12</div><div class="summary-label">Personas</div></div>
+      <div class="summary-card"><div class="summary-num">3+</div><div class="summary-label">Beach Clubs</div></div>
+      <div class="summary-card"><div class="summary-num">1</div><div class="summary-label">Noche Antro</div></div>
+      <div class="summary-card"><div class="summary-num">∞</div><div class="summary-label">Drinks</div></div>
+    </div>
+
+    <div class="days-grid">
+
+      <!-- DÍA 1 -->
+      <div class="day-card">
+        <div class="day-header" role="button">
+          <div class="day-num">01</div>
+          <div class="day-info">
+            <div class="day-date">Miércoles · 13 Mayo</div>
+            <div class="day-title">Llegada & Cumple de Ando 🎂</div>
+          </div>
+          <div class="day-mood">
+            <span class="mood-tag travel">✈ Llegada</span>
+            <span class="mood-tag drinks">🎂 Cumpleaños</span>
+          </div>
+        </div>
+        <div class="day-body">
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-time">12:42 PM — LLEGADA</div>
+              <div class="timeline-text">¡Aterrizaje en Puerto Escondido! ✈️ Check-in al Airbnb, dejar maletas y empezar a sentir el Pacífico.</div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-time">TARDE — SUPERMERCADO</div>
+              <div class="timeline-text">Parada obligatoria al súper antes de acomodarse. <strong>Alcohol, botanas, agua, hielos y todo lo necesario</strong> para surtir el Airbnb de viaje 🛒🍺</div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-time">TARDE</div>
+              <div class="timeline-text">Resto de la tarde en la <strong>alberca del Airbnb</strong>. Primer cóctel del viaje, música y comenzar a entrar en modo vacaciones 🏊</div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-time">NOCHE 🎉</div>
+              <div class="timeline-text">Cena especial para celebrar el <strong>cumpleaños de Ando</strong> 🎂 Salir a cenar a un buen restaurante del Adoquín. ¡Shots de mezcal y bienvenida al viaje!</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DÍA 2 -->
+      <div class="day-card">
+        <div class="day-header" role="button">
+          <div class="day-num">02</div>
+          <div class="day-info">
+            <div class="day-date">Jueves · 14 Mayo</div>
+            <div class="day-title">Punta Zicatela 🌊</div>
+          </div>
+          <div class="day-mood">
+            <span class="mood-tag chill">🤙 Chill</span>
+            <span class="mood-tag beach">🌊 Zicatela</span>
+          </div>
+        </div>
+        <div class="day-body">
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-time">MAÑANA</div>
+              <div class="timeline-text">Desayuno en el Airbnb 🍳☕ Sin prisa, sin presión.</div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-time">DÍA COMPLETO</div>
+              <div class="timeline-text">Nos vamos a <strong>Punta Zicatela</strong> a pasarla todo el día. Llevar cervezas y botanas, ver surfers, caminar por la orilla. El ambiente más icónico de PE.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DÍA 3 -->
+      <div class="day-card">
+        <div class="day-header" role="button">
+          <div class="day-num">03</div>
+          <div class="day-info">
+            <div class="day-date">Viernes · 15 Mayo</div>
+            <div class="day-title">Playa & Noche de Antro 🎉</div>
+          </div>
+          <div class="day-mood">
+            <span class="mood-tag beach">🏖 Playa</span>
+            <span class="mood-tag party">🎉 Antro</span>
+          </div>
+        </div>
+        <div class="day-body">
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-time">MAÑANA</div>
+              <div class="timeline-text">Desayuno en el Airbnb 🍳☕</div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-time">DÍA</div>
+              <div class="timeline-text">Bajamos a la <strong>playa del Airbnb</strong>. Día tranquilo, cervezas, sol y descanso antes de la noche.</div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-time">NOCHE 🔥</div>
+              <div class="timeline-text"><strong>Noche de antro en Zicatela.</strong> Empezar con pre-drinks en el Airbnb, luego a <strong>Prana Cocktail Bar</strong> (⭐ 4.9 — el mejor bar de PE) y terminar bailando en la zona. Abren hasta las 3am.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DÍA 4 -->
+      <div class="day-card">
+        <div class="day-header" role="button">
+          <div class="day-num">04</div>
+          <div class="day-info">
+            <div class="day-date">Sábado · 16 Mayo</div>
+            <div class="day-title">Playa & Peda en Airbnb 🍻</div>
+          </div>
+          <div class="day-mood">
+            <span class="mood-tag beach">🏖 Playa</span>
+            <span class="mood-tag drinks">🍻 Peda</span>
+          </div>
+        </div>
+        <div class="day-body">
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-time">MAÑANA</div>
+              <div class="timeline-text">Desayuno en el Airbnb 🍳☕ Recovery tranquilo después de la noche de antro.</div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-time">DÍA</div>
+              <div class="timeline-text">Bajamos a la <strong>playa del Airbnb o Zicatela</strong> según el mood del grupo. Día libre, sin compromisos.</div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-time">TARDE – NOCHE 🎉</div>
+              <div class="timeline-text"><strong>Peda en el Airbnb.</strong> Música, alberca, drinks de la despensa que compramos el día 1. La noche más relajada y más nuestra del viaje 🏠🥃</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DÍA 5 -->
+      <div class="day-card">
+        <div class="day-header" role="button">
+          <div class="day-num">05</div>
+          <div class="day-info">
+            <div class="day-date">Domingo · 17 Mayo</div>
+            <div class="day-title">Beach Club 🏖</div>
+          </div>
+          <div class="day-mood">
+            <span class="mood-tag beach">🏖 Beach Club</span>
+            <span class="mood-tag chill">😎 Tarde Airbnb</span>
+          </div>
+        </div>
+        <div class="day-body">
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-time">MAÑANA</div>
+              <div class="timeline-text">Desayuno en el Airbnb 🍳☕</div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-time">DÍA</div>
+              <div class="timeline-text"><strong>Club Bacocho</strong> — El mejor beach club de PE. Day pass ~$1,500-2,000 MXN incluye crédito en comida y drinks. Piscina enorme, acceso al mar, servicio de primer nivel. ⭐ 4.7/5 con más de 3,500 reseñas. ¡El plan más épico del viaje!</div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-time">TARDE</div>
+              <div class="timeline-text">Regreso al Airbnb. Tarde libre — alberca, descanso, disfrutar los últimos momentos del viaje.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DÍA 6 -->
+      <div class="day-card">
+        <div class="day-header" role="button">
+          <div class="day-num">06</div>
+          <div class="day-info">
+            <div class="day-date">Lunes · 18 Mayo</div>
+            <div class="day-title">Regreso a GDL ✈️</div>
+          </div>
+          <div class="day-mood">
+            <span class="mood-tag travel">✈ Vuelo a GDL</span>
+          </div>
+        </div>
+        <div class="day-body">
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-time">MAÑANA</div>
+              <div class="timeline-text">Check-out del Airbnb. Último desayuno juntos, las últimas fotos y los abrazos de despedida.</div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-time">SEGÚN VUELO</div>
+              <div class="timeline-text">Traslado al aeropuerto de Puerto Escondido (PXM) 🛫 El aeropuerto es pequeño — llegar con 1.5 hrs de anticipación. De regreso a Guadalajara con el tanque lleno de sol, mezcal y recuerdos 🌊</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SPOTS -->
+  <section id="spots" class="section">
+    <p class="section-title">✦ Recomendaciones</p>
+    <h2 class="section-heading">Beach Clubs <em>& Bares</em></h2>
+
+    <p class="category-label">🏖 Beach Clubs</p>
+    <div class="spots-grid">
+      <div class="spot-card beach-club">
+        <div class="spot-type beach-club">Beach Club · Top Pick</div>
+        <div class="spot-name">Club Bacocho</div>
+        <div class="spot-rating">
+          <div class="stars-visual">
+            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+          </div>
+          <span class="rating-num">4.7</span>
+          <span class="rating-count">(3,592 reseñas)</span>
+        </div>
+        <p class="spot-desc">El mejor beach club de PE según las reseñas. Piscina enorme, acceso a Playa Bacocho, servicio de lujo. Day pass incluye crédito en comida y 2x1 en happy hour.</p>
+        <div class="spot-tags">
+          <span class="spot-tag">Day Pass ~$1,500-2k MXN</span>
+          <span class="spot-tag">Sillones playa</span>
+          <span class="spot-tag">Happy hour</span>
+        </div>
+        <div class="spot-hours">⏰ <span>10am – 7pm</span> · Todos los días</div>
+      </div>
+
+      <div class="spot-card beach-club">
+        <div class="spot-type beach-club">Beach Club · Zicatela</div>
+        <div class="spot-name">Zolem Beach Club</div>
+        <div class="spot-rating">
+          <div class="stars-visual">
+            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+          </div>
+          <span class="rating-num">4.4</span>
+          <span class="rating-count">(256 reseñas)</span>
+        </div>
+        <p class="spot-desc">Sin niños. Pool frente al mar, música house, ambiente adulto y relajado. El vibe ideal para las parejas. Drinks asequibles y staff amable.</p>
+        <div class="spot-tags">
+          <span class="spot-tag">Sin niños 🙏</span>
+          <span class="spot-tag">Música house</span>
+          <span class="spot-tag">Vista al mar</span>
+        </div>
+        <div class="spot-hours">⏰ <span>10am – 10pm</span> · Vie-Dom</div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+    <p class="category-label">🍹 Bares & Rooftops</p>
+    <div class="spots-grid">
+      <div class="spot-card bar">
+        <div class="spot-type bar">Cocktail Bar · Mejor del pueblo</div>
+        <div class="spot-name">Prana Cocktail Bar</div>
+        <div class="spot-rating">
+          <div class="stars-visual">
+            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+          </div>
+          <span class="rating-num">4.9</span>
+          <span class="rating-count">(146 reseñas)</span>
+        </div>
+        <p class="spot-desc">El bar mejor calificado de PE. Cócteles deliciosos con vista a la playa, hamacas y sillones gratis al consumir, y los mejores sunsets. Abren hasta las 3am.</p>
+        <div class="spot-tags">
+          <span class="spot-tag">Sunset views</span>
+          <span class="spot-tag">Beds gratis al consumir</span>
+          <span class="spot-tag">Hasta 3am</span>
+        </div>
+        <div class="spot-hours">⏰ <span>11am – 3am</span> · Todos los días</div>
+      </div>
+
+      <div class="spot-card bar">
+        <div class="spot-type bar">Rooftop Bar</div>
+        <div class="spot-name">Puerto Roof</div>
+        <div class="spot-rating">
+          <div class="stars-visual">
+            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+          </div>
+          <span class="rating-num">4.8</span>
+          <span class="rating-count">(32 reseñas)</span>
+        </div>
+        <p class="spot-desc">Terraza en el Centro con vista increíble. Precios muy accesibles, buena música, ambiente dinámico. Perfecto para el pre-antro o para una noche más tranquila.</p>
+        <div class="spot-tags">
+          <span class="spot-tag">Vista panorámica</span>
+          <span class="spot-tag">Precios accesibles</span>
+          <span class="spot-tag">Zona centro</span>
+        </div>
+        <div class="spot-hours">⏰ <span>6pm – 11:30pm</span> · Mar-Dom</div>
+      </div>
+
+      <div class="spot-card bar">
+        <div class="spot-type bar">Beach Bar · Clásico</div>
+        <div class="spot-name">Palapita Bar</div>
+        <div class="spot-rating">
+          <div class="stars-visual">
+            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+          </div>
+          <span class="rating-num">4.6</span>
+          <span class="rating-count">(1,482 reseñas)</span>
+        </div>
+        <p class="spot-desc">El bar de playa más querido de Zicatela. Sillas en la arena, hamacas en el bar, piña coladas legendarias con happy hour y refills. Ambiente de día o noche.</p>
+        <div class="spot-tags">
+          <span class="spot-tag">Piña coladas 🥤</span>
+          <span class="spot-tag">Happy hour</span>
+          <span class="spot-tag">Pies en la arena</span>
+          <span class="spot-tag">9am–12am</span>
+        </div>
+        <div class="spot-hours">⏰ <span>9am – 12am</span> · Todos los días</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ANTRO -->
+  <section id="antro" class="section">
+    <p class="section-title">✦ Vida Nocturna</p>
+    <h2 class="section-heading">Antro & <em>Noche</em></h2>
+
+    <div class="warning-box">
+      <span class="w-icon">⚠️</span>
+      <p class="w-text"><strong>Importante:</strong> Puerto Escondido no tiene la misma escena de antros que CDMX o Cancún. La vida nocturna es más de bares en la playa y rooftops que de clubs. Los lugares se llenan tarde (12am+) y principalmente los fines de semana. ¡Esto no es un defecto, es parte del encanto relajado del lugar!</p>
+    </div>
+
+    <div class="spots-grid">
+      <div class="spot-card antro">
+        <div class="spot-type antro">Club Nocturno · Viernes y Sábado</div>
+        <div class="spot-name">Dubai Club</div>
+        <div class="spot-rating">
+          <div class="stars-visual">
+            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star empty">★</span><span class="star empty">★</span>
+          </div>
+          <span class="rating-num">3.7</span>
+          <span class="rating-count">(578 reseñas)</span>
+        </div>
+        <p class="spot-desc">El antro más clásico del Adoquín. Piso de baile, música variada (reggaetón, electrónica), y los weekends prende bien después de medianoche. Llegar tarde es la clave.</p>
+        <div class="spot-tags">
+          <span class="spot-tag">Abre Viernes y Sábado</span>
+          <span class="spot-tag">9pm – 4-6am</span>
+          <span class="spot-tag">Zona Adoquín</span>
+        </div>
+        <div class="spot-hours">⏰ <span>9pm – 4am</span> (Sáb hasta 6am)</div>
+      </div>
+
+      <div class="spot-card bar">
+        <div class="spot-type bar">Rooftop · Pre-noche</div>
+        <div class="spot-name">Puerto Roof</div>
+        <div class="spot-rating">
+          <div class="stars-visual">
+            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+          </div>
+          <span class="rating-num">4.8</span>
+          <span class="rating-count">(32 reseñas)</span>
+        </div>
+        <p class="spot-desc">Perfecto para comenzar la noche. Música ambiental, precios accesibles, vista al centro histórico. El pre-game ideal antes de bajar al Adoquín.</p>
+        <div class="spot-tags">
+          <span class="spot-tag">Precio accesible</span>
+          <span class="spot-tag">Ambiente animado</span>
+          <span class="spot-tag">Hasta 11:30pm</span>
+        </div>
+        <div class="spot-hours">⏰ <span>6pm – 11:30pm</span> · Mar-Dom</div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <p class="section-title">✦ La Ruta Recomendada</p>
+    <div class="days-grid" style="margin-top:0">
+      <div class="day-card">
+        <div class="day-header" role="button">
+          <div class="day-num" style="font-size:28px">🌙</div>
+          <div class="day-info">
+            <div class="day-date">Viernes 15 Mayo — Ruta de Noche</div>
+            <div class="day-title">La Noche Perfecta de PE</div>
+          </div>
+          <div class="day-mood"><span class="mood-tag party">Step by step</span></div>
+        </div>
+        <div class="day-body">
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-time">8:30PM · AIRBNB</div>
+              <div class="timeline-text">Pre-drinks en casa. Música, shots de mezcal, preparar el hype grupal.</div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-time">10PM · ADOQUÍN</div>
+              <div class="timeline-text">Subir al <strong>Puerto Roof</strong> para empezar la noche con vista. Drinks asequibles, buena vibra.</div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-time">11:30PM · ZICATELA</div>
+              <div class="timeline-text"><strong>Prana Cocktail Bar</strong> — cócteles de autor frente a la playa. El lugar se pone bueno de noche con música más movida.</div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-time">1AM+ · ADOQUÍN</div>
+              <div class="timeline-text"><strong>Dubai Club</strong> — cuando ya está prendido. El piso de baile se llena los viernes. Las bebidas tienen buen precio.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHECKLIST -->
+  <section id="checklist" class="section">
+    <p class="section-title">✦ ¿Ya están listos?</p>
+    <h2 class="section-heading">El <em>Checklist</em></h2>
+
+    <div class="checklist-grid">
+      <div class="checklist-group">
+        <h3>📋 Antes de Viajar</h3>
+        <label class="check-item">
+          <input type="checkbox">
+          <span class="check-label">Confirmar Airbnb y compartir dirección al grupo</span>
+        </label>
+        <label class="check-item">
+          <input type="checkbox">
+          <span class="check-label">Vuelos confirmados para las 6 parejas</span>
+        </label>
+        <label class="check-item">
+          <input type="checkbox">
+          <span class="check-label">Crear grupo de WhatsApp del viaje</span>
+        </label>
+        <label class="check-item">
+          <input type="checkbox">
+          <span class="check-label">Definir presupuesto diario por pareja</span>
+        </label>
+        <label class="check-item">
+          <input type="checkbox">
+          <span class="check-label">Reservar day pass Club Bacocho con anticipación</span>
+        </label>
+        <label class="check-item">
+          <input type="checkbox">
+          <span class="check-label">Descargar mapas offline de Puerto Escondido</span>
+        </label>
+        <label class="check-item">
+          <input type="checkbox">
+          <span class="check-label">Cambiar pesos o retirar efectivo antes de salir</span>
+        </label>
+      </div>
+
+      <div class="checklist-group">
+        <h3>👙 Qué Llevar</h3>
+        <label class="check-item">
+          <input type="checkbox">
+          <span class="check-label">Protector solar (SPF 50+, lleva de más)</span>
+        </label>
+        <label class="check-item">
+          <input type="checkbox">
+          <span class="check-label">Traje de baño(s) extra — van a necesitar varios</span>
+        </label>
+        <label class="check-item">
+          <input type="checkbox">
+          <span class="check-label">Sandalias cómodas para playa y callejear</span>
+        </label>
+        <label class="check-item">
+          <input type="checkbox">
+          <span class="check-label">Toallas de playa</span>
+        </label>
+        <label class="check-item">
+          <input type="checkbox">
+          <span class="check-label">Ropa ligera para salir de noche</span>
+        </label>
+        <label class="check-item">
+          <input type="checkbox">
+          <span class="check-label">Lentes de sol y sombrero/gorra</span>
+        </label>
+        <label class="check-item">
+          <input type="checkbox">
+          <span class="check-label">Pastillas o suero para hidratación</span>
+        </label>
+        <label class="check-item">
+          <input type="checkbox">
+          <span class="check-label">Power bank para el teléfono</span>
+        </label>
+      </div>
+
+      <div class="checklist-group">
+        <h3>🌊 En Puerto Escondido</h3>
+        <label class="check-item">
+          <input type="checkbox">
+          <span class="check-label">Ver el sunset en Bacocho o el Adoquín 🌅</span>
+        </label>
+        <label class="check-item">
+          <input type="checkbox">
+          <span class="check-label">Tomar mezcal artesanal local 🥃</span>
+        </label>
+        <label class="check-item">
+          <input type="checkbox">
+          <span class="check-label">Ver surfistas en Playa Zicatela</span>
+        </label>
+        <label class="check-item">
+          <input type="checkbox">
+          <span class="check-label">Foto grupal épica de las 6 parejas 📸</span>
+        </label>
+        <label class="check-item">
+          <input type="checkbox">
+          <span class="check-label">Piña colada en Palapita Bar 🍍</span>
+        </label>
+        <label class="check-item">
+          <input type="checkbox">
+          <span class="check-label">Noche de antro en Dubai Club 🕺</span>
+        </label>
+        <label class="check-item">
+          <input type="checkbox">
+          <span class="check-label">Ceviche o mariscos en el mercado local</span>
+        </label>
+        <label class="check-item">
+          <input type="checkbox">
+          <span class="check-label">Day pass en Club Bacocho 🏖</span>
+        </label>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- FAB -->
+<button class="fab"  title="Agregar lugar">＋</button>
+<div class="fab-label">Agregar lugar</div>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="addModal">
+  <div class="modal">
+    <button class="modal-close" >✕</button>
+    <div class="modal-title">Agregar <em>Lugar</em></div>
+    <p class="modal-sub">Agrega un bar, beach club o antro a la lista del grupo 🌊</p>
+
+    <div class="form-group">
+      <label class="form-label">Nombre del lugar</label>
+      <input class="form-input" id="inp-name" type="text" placeholder="Ej. Bar del Mar…">
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label class="form-label">Categoría</label>
+        <select class="form-select" id="inp-type">
+          <option value="bar">🍹 Bar</option>
+          <option value="beach-club">🏖 Beach Club</option>
+          <option value="antro">🎉 Antro / Club</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Horario</label>
+        <input class="form-input" id="inp-hours" type="text" placeholder="Ej. 6pm – 2am">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">Descripción / Por qué ir</label>
+      <textarea class="form-textarea" id="inp-desc" placeholder="Cuéntale al grupo por qué vale la pena…"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">Tags (toca para seleccionar)</label>
+      <div class="tags-input-row" id="tags-row">
+        <span class="tag-chip" data-tag="true">Sunset views</span>
+        <span class="tag-chip" data-tag="true">Pies en la arena</span>
+        <span class="tag-chip" data-tag="true">Música electrónica</span>
+        <span class="tag-chip" data-tag="true">Reggaetón</span>
+        <span class="tag-chip" data-tag="true">Precios accesibles</span>
+        <span class="tag-chip" data-tag="true">Vista al mar</span>
+        <span class="tag-chip" data-tag="true">Sin niños</span>
+        <span class="tag-chip" data-tag="true">Cócteles artesanales</span>
+        <span class="tag-chip" data-tag="true">Happy hour</span>
+        <span class="tag-chip" data-tag="true">Pool</span>
+        <span class="tag-chip" data-tag="true">Zona Adoquín</span>
+        <span class="tag-chip" data-tag="true">Zicatela</span>
+      </div>
+    </div>
+
+    <div class="modal-actions">
+      <button class="btn-cancel" >Cancelar</button>
+      <button class="btn-save" >✓ Guardar lugar</button>
+    </div>
+  </div>
+</div>
+
+
+<script>
+// ============================================================
+// ALL FUNCTIONS — defined before anything runs
+// ============================================================
+
+var editingMode = false;
+var isTouchDevice = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
+
+// ============================================================
+// JSONBIN — almacenamiento en la nube compartido
+// ============================================================
+var BIN_ID = '6994cf5fd0ea881f40c2209e';
+var BIN_URL = 'https://api.jsonbin.io/v3/b/' + BIN_ID;
+var BIN_KEY = '$2a$10$s0bmMDI2mDWflTmegegCPuTp.vD0XgX9kxyIIP.mgWS.aWRgQ1ge.';
+var cloudData = { itinerario: [], spots: [], checklist: [] };
+var saveTimeout = null;
+
+function loadFromCloud(callback) {
+  fetch(BIN_URL + '/latest', {
+    headers: { 'X-Access-Key': BIN_KEY }
+  })
+    .then(function(r) { return r.json(); })
+    .then(function(json) {
+      if (json && json.record) {
+        cloudData = Object.assign({ itinerario: [], spots: [], checklist: [] }, json.record);
+      }
+      if (callback) callback();
+    })
+    .catch(function() { if (callback) callback(); });
+}
+
+function saveToCloud() {
+  clearTimeout(saveTimeout);
+  saveTimeout = setTimeout(function() {
+    fetch(BIN_URL, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-Access-Key': BIN_KEY
+      },
+      body: JSON.stringify(cloudData)
+    }).catch(function() {});
+  }, 800);
+}
+
+// --- CHECKLIST ---
+function saveChecklist() {
+  var checks = document.querySelectorAll('.check-item input[type="checkbox"]');
+  var state = [];
+  for (var i = 0; i < checks.length; i++) state.push(checks[i].checked);
+  cloudData.checklist = state;
+  saveToCloud();
+}
+
+function loadChecklist() {
+  var state = cloudData.checklist || [];
+  var checks = document.querySelectorAll('.check-item input[type="checkbox"]');
+  for (var i = 0; i < checks.length; i++) {
+    if (state[i]) {
+      checks[i].checked = true;
+      checks[i].closest('.check-item').classList.add('done');
+    }
+  }
+}
+
+// --- NAV ---
+function showSection(id, btn) {
+  var sections = document.querySelectorAll('.section');
+  for (var i = 0; i < sections.length; i++) sections[i].classList.remove('active');
+  var btns = document.querySelectorAll('.nav-btn');
+  for (var i = 0; i < btns.length; i++) btns[i].classList.remove('active');
+  document.getElementById(id).classList.add('active');
+  btn.classList.add('active');
+}
+
+// --- DAYS ---
+function toggleDay(header) {
+  var body = header.nextElementSibling;
+  body.classList.toggle('open');
+}
+
+// --- MODAL ---
+function openModal() {
+  document.getElementById('addModal').classList.add('open');
+}
+
+function closeModal() {
+  document.getElementById('addModal').classList.remove('open');
+  document.getElementById('inp-name').value = '';
+  document.getElementById('inp-hours').value = '';
+  document.getElementById('inp-desc').value = '';
+  document.getElementById('inp-type').value = 'bar';
+  var chips = document.querySelectorAll('.tag-chip.active');
+  for (var i = 0; i < chips.length; i++) chips[i].classList.remove('active');
+}
+
+// --- SPOTS ---
+function getCustomSpots() {
+  return cloudData.spots || [];
+}
+
+function saveSpot() {
+  var name = document.getElementById('inp-name').value.trim();
+  if (!name) {
+    var inp = document.getElementById('inp-name');
+    inp.style.borderColor = 'rgba(232,100,58,0.8)';
+    inp.focus();
+    setTimeout(function() { inp.style.borderColor = ''; }, 1500);
+    return;
+  }
+  var activeTags = document.querySelectorAll('.tag-chip.active');
+  var tags = [];
+  for (var i = 0; i < activeTags.length; i++) tags.push(activeTags[i].textContent);
+  var spot = {
+    id: Date.now(),
+    name: name,
+    type: document.getElementById('inp-type').value,
+    hours: document.getElementById('inp-hours').value.trim(),
+    desc: document.getElementById('inp-desc').value.trim(),
+    tags: tags
+  };
+  cloudData.spots = getCustomSpots();
+  cloudData.spots.push(spot);
+  saveToCloud();
+  closeModal();
+  renderCustomSpots();
+}
+
+function removeSpot(id) {
+  cloudData.spots = getCustomSpots().filter(function(s) { return s.id !== id; });
+  saveToCloud();
+  renderCustomSpots();
+}
+
+var typeLabels = { bar: '🍹 Bar', 'beach-club': '🏖 Beach Club', antro: '🎉 Antro / Club' };
+var typeColors = { bar: 'bar', 'beach-club': 'beach-club', antro: 'antro' };
+
+function buildSpotCard(spot) {
+  var tagsHtml = '';
+  for (var i = 0; i < spot.tags.length; i++) tagsHtml += '<span class="spot-tag">' + spot.tags[i] + '</span>';
+  var hoursHtml = spot.hours ? '<div class="spot-hours">⏰ <span>' + spot.hours + '</span></div>' : '';
+  var descHtml = spot.desc ? '<p class="spot-desc">' + spot.desc + '</p>' : '';
+  return '<div class="spot-card ' + typeColors[spot.type] + ' custom-entry" id="spot-' + spot.id + '">'
+    + '<div class="custom-badge">✦ Agregado por el grupo</div>'
+    + '<div class="spot-type ' + typeColors[spot.type] + '">' + typeLabels[spot.type] + '</div>'
+    + '<div class="spot-name">' + spot.name + '</div>'
+    + descHtml
+    + (tagsHtml ? '<div class="spot-tags">' + tagsHtml + '</div>' : '')
+    + hoursHtml
+    + '<button class="remove-spot" onclick="removeSpot(' + spot.id + ')">✕ Quitar</button>'
+    + '</div>';
+}
+
+function renderCustomSpots() {
+  var old = document.querySelectorAll('.custom-spots-section');
+  for (var i = 0; i < old.length; i++) old[i].remove();
+  var spots = getCustomSpots();
+  var spotSpots = spots.filter(function(s) { return s.type === 'bar' || s.type === 'beach-club'; });
+  var antroSpots = spots.filter(function(s) { return s.type === 'antro'; });
+  function inject(sectionId, list) {
+    if (!list.length) return;
+    var sec = document.getElementById(sectionId);
+    var w = document.createElement('div');
+    w.className = 'custom-spots-section';
+    var html = '<div class="custom-section-title">✦ Agregados por el grupo</div><div class="spots-grid">';
+    for (var i = 0; i < list.length; i++) html += buildSpotCard(list[i]);
+    html += '</div>';
+    w.innerHTML = html;
+    sec.appendChild(w);
+  }
+  inject('spots', spotSpots);
+  inject('antro', antroSpots);
+}
+
+// --- EDIT MODE ---
+function exitEditMode() {
+  var editables = document.querySelectorAll('[contenteditable="true"]');
+  for (var i = 0; i < editables.length; i++) editables[i].contentEditable = 'false';
+  var editing = document.querySelectorAll('.editing-mode');
+  for (var i = 0; i < editing.length; i++) editing[i].classList.remove('editing-mode');
+  editingMode = false;
+  document.getElementById('editModeBar').classList.remove('visible');
+  document.body.style.paddingTop = '';
+  saveItinerary();
+  var cards = document.querySelectorAll('.day-card');
+  for (var i = 0; i < cards.length; i++) {
+    cards[i].classList.add('just-saved');
+    (function(c) { setTimeout(function() { c.classList.remove('just-saved'); }, 1000); })(cards[i]);
+  }
+}
+
+function enterEditMode(card) {
+  var body = card.querySelector('.day-body');
+  if (!body.classList.contains('open')) body.classList.add('open');
+  var title = card.querySelector('.day-title');
+  if (title) {
+    title.contentEditable = 'true';
+    title.spellcheck = false;
+    title.setAttribute('autocorrect', 'on');
+  }
+  var fields = card.querySelectorAll('.timeline-time, .timeline-text');
+  for (var i = 0; i < fields.length; i++) {
+    fields[i].contentEditable = 'true';
+    fields[i].spellcheck = false;
+    fields[i].addEventListener('blur', saveItinerary);
+  }
+  card.classList.add('editing-mode');
+  if (!editingMode) {
+    editingMode = true;
+    document.getElementById('editModeBar').classList.add('visible');
+    document.body.style.paddingTop = '48px';
+  }
+  // On touch: don't auto-focus (causes scroll jump), show visual feedback instead
+  if (!isTouchDevice && title) {
+    title.focus();
+  } else {
+    // Show a brief flash to indicate edit mode is active
+    card.style.borderColor = 'rgba(46,139,122,0.8)';
+    setTimeout(function() { card.style.borderColor = ''; }, 600);
+  }
+}
+
+function addRemoveBtn(item) {
+  if (item.querySelector('.remove-activity-btn')) return;
+  var btn = document.createElement('button');
+  btn.className = 'remove-activity-btn';
+  btn.innerHTML = '✕';
+  btn.addEventListener('click', function(e) {
+    e.stopPropagation();
+    item.style.opacity = '0';
+    setTimeout(function() { item.remove(); saveItinerary(); }, 250);
+  });
+  item.appendChild(btn);
+}
+
+function addActivity(timeline) {
+  var item = document.createElement('div');
+  item.className = 'timeline-item';
+  item.innerHTML = '<div class="timeline-time" contenteditable="true" spellcheck="false">NUEVA ACTIVIDAD</div>'
+    + '<div class="timeline-text" contenteditable="true" spellcheck="false">Describe la actividad aquí…</div>';
+  timeline.appendChild(item);
+  addRemoveBtn(item);
+  var fields = item.querySelectorAll('[contenteditable]');
+  for (var i = 0; i < fields.length; i++) fields[i].addEventListener('blur', saveItinerary);
+  item.querySelector('.timeline-time').focus();
+  saveItinerary();
+}
+
+function saveItinerary() {
+  var data = [];
+  var cards = document.querySelectorAll('.day-card');
+  for (var i = 0; i < cards.length; i++) {
+    var title = cards[i].querySelector('.day-title');
+    var acts = [];
+    var items = cards[i].querySelectorAll('.timeline-item');
+    for (var j = 0; j < items.length; j++) {
+      var t = items[j].querySelector('.timeline-time');
+      var tx = items[j].querySelector('.timeline-text');
+      acts.push({ time: t ? t.innerHTML : '', text: tx ? tx.innerHTML : '' });
+    }
+    data.push({ title: title ? title.innerHTML : '', activities: acts });
+  }
+  cloudData.itinerario = data;
+  saveToCloud();
+}
+
+function loadItinerary() {
+  var data = cloudData.itinerario || [];
+  if (!data.length) return;
+  var cards = document.querySelectorAll('.day-card');
+  for (var i = 0; i < cards.length; i++) {
+    if (!data[i]) continue;
+    var titleEl = cards[i].querySelector('.day-title');
+    if (titleEl && data[i].title) titleEl.innerHTML = data[i].title;
+    var timeline = cards[i].querySelector('.timeline');
+    if (!timeline || !data[i].activities) continue;
+    var oldItems = timeline.querySelectorAll('.timeline-item');
+    for (var k = 0; k < oldItems.length; k++) oldItems[k].remove();
+    for (var j = 0; j < data[i].activities.length; j++) {
+      var act = data[i].activities[j];
+      var item = document.createElement('div');
+      item.className = 'timeline-item';
+      item.innerHTML = '<div class="timeline-time">' + act.time + '</div>'
+        + '<div class="timeline-text">' + act.text + '</div>';
+      timeline.appendChild(item);
+      addRemoveBtn(item);
+    }
+  }
+}
+
+function initEditButtons() {
+  var cards = document.querySelectorAll('.day-card');
+  for (var i = 0; i < cards.length; i++) {
+    (function(card) {
+      var header = card.querySelector('.day-header');
+      var mood = card.querySelector('.day-mood');
+
+      // ── Edit button ─────────────────────────────────────
+      var editBtn = document.createElement('button');
+      editBtn.className = 'edit-day-btn';
+      editBtn.title = 'Editar día';
+      editBtn.innerHTML = '✏';
+      editBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        enterEditMode(card);
+      });
+      if (mood) mood.after(editBtn);
+      else header.appendChild(editBtn);
+
+      // ── Long-press on the card header (mobile) ──────────
+      var pressTimer = null;
+      var LONG_PRESS_MS = 500;
+
+      function startPress(e) {
+        // Only trigger if NOT tapping the edit btn itself
+        if (e.target === editBtn || editBtn.contains(e.target)) return;
+        pressTimer = setTimeout(function() {
+          pressTimer = null;
+          // Vibrate if supported (nice tactile feedback)
+          if (navigator.vibrate) navigator.vibrate(40);
+          enterEditMode(card);
+        }, LONG_PRESS_MS);
+      }
+      function cancelPress() {
+        if (pressTimer) { clearTimeout(pressTimer); pressTimer = null; }
+      }
+
+      header.addEventListener('touchstart', startPress, { passive: true });
+      header.addEventListener('touchend',   cancelPress, { passive: true });
+      header.addEventListener('touchmove',  cancelPress, { passive: true });
+
+      // ── Add-activity button ──────────────────────────────
+      var timeline = card.querySelector('.timeline');
+      if (timeline) {
+        var addBtn = document.createElement('button');
+        addBtn.className = 'add-activity-btn';
+        addBtn.innerHTML = '＋ Agregar actividad';
+        addBtn.style.touchAction = 'manipulation';
+        addBtn.addEventListener('click', function(e) {
+          e.stopPropagation();
+          addActivity(timeline);
+        });
+        timeline.after(addBtn);
+      }
+
+      // ── Remove buttons on existing items ────────────────
+      var items = card.querySelectorAll('.timeline-item');
+      for (var j = 0; j < items.length; j++) addRemoveBtn(items[j]);
+
+    })(cards[i]);
+  }
+}
+
+// ============================================================
+// INIT — wires everything up after DOM is ready
+// ============================================================
+function init() {
+  // Nav
+  var navBtns = document.querySelectorAll('.nav-btn[data-section]');
+  for (var i = 0; i < navBtns.length; i++) {
+    (function(btn) {
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        showSection(btn.dataset.section, btn);
+      });
+    })(navBtns[i]);
+  }
+
+  // Day headers
+  var headers = document.querySelectorAll('.day-header[role="button"]');
+  for (var i = 0; i < headers.length; i++) {
+    (function(h) {
+      h.addEventListener('click', function(e) {
+        // Don't toggle if the edit button inside was clicked
+        if (e.target.classList.contains('edit-day-btn')) return;
+        toggleDay(h);
+      });
+    })(headers[i]);
+  }
+
+  // Checklist
+  var checks = document.querySelectorAll('.check-item input[type="checkbox"]');
+  for (var i = 0; i < checks.length; i++) {
+    checks[i].addEventListener('change', function() {
+      this.closest('.check-item').classList.toggle('done', this.checked);
+      saveChecklist();
+    });
+  }
+
+  // FAB + modal
+  document.querySelector('.fab').addEventListener('click', openModal);
+  document.querySelector('.modal-close').addEventListener('click', closeModal);
+  document.querySelector('.btn-cancel').addEventListener('click', closeModal);
+  document.querySelector('.btn-save').addEventListener('click', saveSpot);
+  document.querySelector('.edit-done-btn').addEventListener('click', exitEditMode);
+  document.getElementById('addModal').addEventListener('click', function(e) {
+    if (e.target === this) closeModal();
+  });
+
+  // Tag chips
+  var chips = document.querySelectorAll('.tag-chip[data-tag]');
+  for (var i = 0; i < chips.length; i++) {
+    chips[i].addEventListener('click', function() { this.classList.toggle('active'); });
+  }
+
+  // Open first day
+  var firstBody = document.querySelector('.day-body');
+  if (firstBody) firstBody.classList.add('open');
+
+  // Load data from cloud first, then render
+  loadFromCloud(function() {
+    loadItinerary();
+    loadChecklist();
+    initEditButtons();
+    renderCustomSpots();
+  });
+
+  // Mobile hint: show for 5 seconds then fade out
+  var hint = document.getElementById('mobileHint');
+  if (hint && isTouchDevice) {
+    setTimeout(function() {
+      hint.classList.add('hidden');
+    }, 5000);
+    hint.addEventListener('click', function() { hint.classList.add('hidden'); });
+  }
+}
+
+// Fire init
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', init);
+} else {
+  init();
+}
+</script>
+</body>
+</html>
